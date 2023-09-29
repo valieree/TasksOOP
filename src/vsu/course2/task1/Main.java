@@ -1,4 +1,4 @@
-package vsu;
+package vsu.course2.task1;
 
 import vsu.course2.task1.*;
 import vsu.course2.task2.ExtParent;
