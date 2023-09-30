@@ -14,8 +14,8 @@ public class Cat extends Animal {
     }
     @Override
     public void prettyPrint() {
+        System.out.println("Я котик!!!");
         super.prettyPrint();
-        System.out.println("Котик!!!");
     }
     @Override
     public void whatColor() {

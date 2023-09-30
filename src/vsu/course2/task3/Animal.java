@@ -25,7 +25,8 @@ public class Animal {
         System.out.println("Цвет: " + color);
     }
     public void prettyPrint() {
-        System.out.println("Животное!");
+        System.out.println("Мой цвет " + color +"!");
+        System.out.println("Мое место обитания " + habitat + "!");
     }
 
 
