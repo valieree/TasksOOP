@@ -8,6 +8,10 @@ public class StudentChange {
     private String name;
     private List<Integer> marks;
 
+    public void setMarks(List<Integer> marks) {
+        this.marks = marks;
+    }
+
     public StudentChange(int course, String name, List<Integer> marks) {
 
         this.course = course;
@@ -27,7 +31,7 @@ public class StudentChange {
             return false;
         }
         StudentChange that = (StudentChange) object;
-        return course == that.course && Objects.equals(name, that.name) && Objects.equals(marks, that.marks);
+        return Objects.equals(name, that.name);
     }
 
     @Override

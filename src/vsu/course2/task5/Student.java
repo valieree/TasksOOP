@@ -20,7 +20,7 @@ public class Student {
             return false;
 
         }
-        if( this. getClass() != object.getClass())  {
+        if( this.getClass() != object.getClass())  {
             return false;
         }
         Student student = (Student) object;
