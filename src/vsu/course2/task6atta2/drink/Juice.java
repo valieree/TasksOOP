@@ -1,46 +1,20 @@
 package vsu.course2.task6atta2.drink;
 
-import vsu.course2.task6atta2.Info;
+import vsu.course2.task6atta2.Product;
 
-public class Juice implements DrinkProduct, Info {
-
-    private String name;
-    private int price;
-    private double weight;
-    private String country;
+public class Juice extends Product implements DrinkProduct{
     private boolean isCarbonated;
     private boolean isAlcoholic;
     private String taste;
 
     public Juice(String name, int price, double weight, String country, boolean isCarbonated, boolean isAlcoholic, String taste) {
-        this.name = name;
-        this.price = price;
-        this.weight = weight;
-        this.country = country;
+        super(name,price,weight,country);
         this.isCarbonated = isCarbonated;
         this.isAlcoholic = isAlcoholic;
         this.taste = taste;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
-
-    @Override
-    public double getWeight() {
-        return weight;
-    }
-
-    @Override
-    public String getCountryOfOrigin() {
-        return country;
-    }
 
     @Override
     public void printProductInfo() {
@@ -49,14 +23,15 @@ public class Juice implements DrinkProduct, Info {
                 ", Вес: " + getWeight() +
                 ", Страна производства: " + getCountryOfOrigin() +
                 ", Газированный напиток: " + isCarbonated() +
-                ", Алкогольный напиток: " + isAlcoholic());
+                ", Алкогольный напиток: " + isAlcoholic() +
+                ", Вкус: " + getTaste());
     }
 
     @Override
     public void buy() {
         System.out.println("Покупка сока...");
-        System.out.println("Вес: " + weight);
-        System.out.println("Цена: " + price);
+        System.out.println("Вес: " + getWeight());
+        System.out.println("Цена: " + getPrice());
 
     }
     @Override

@@ -1,33 +1,16 @@
 package vsu.course2.task6atta2.milk;
+import vsu.course2.task6atta2.Product;
 
-import vsu.course2.task6atta2.Info;
+public class Cheese extends Product implements MilkProduct {
 
-public class Cheese implements Info, MilkProduct {
-    private String name;
-    private int price;
-    private double weight;
-    private String country;
-    boolean isLowFat;
+    private boolean isLowFat;
 
-    @Override
-    public String getName() {
-        return name;
+    public Cheese(String name, int price, double weight, String country, boolean isLowFat) {
+        super(name,price,weight,country);
+        this.isLowFat = isLowFat;
     }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
 
-    @Override
-    public double getWeight() {
-        return weight;
-    }
-
-    @Override
-    public String getCountryOfOrigin() {
-        return country;
-    }
 
     @Override
     public void printProductInfo() {
@@ -41,8 +24,8 @@ public class Cheese implements Info, MilkProduct {
     @Override
     public void buy() {
         System.out.println("Покупка сыра...");
-        System.out.println("Вес: " + weight);
-        System.out.println("Цена: " + price);
+        System.out.println("Вес: " + getWeight());
+        System.out.println("Цена: " + getPrice());
     }
 
     @Override

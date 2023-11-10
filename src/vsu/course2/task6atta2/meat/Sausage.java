@@ -1,44 +1,19 @@
 package vsu.course2.task6atta2.meat;
 
-import vsu.course2.task6atta2.Info;
 import vsu.course2.task6atta2.Product;
 
-public class Sausage implements MeatProduct, Info {
-    private String name;
-    private int price;
-    private double weight;
-    private String country;
+public class Sausage extends Product implements MeatProduct {
+
     private String animalType;
     private boolean frozen;
 
     public Sausage(String name, int price, double weight, String country, String animalType, boolean frozen) {
-        this.name = name;
-        this.price = price;
-        this.weight = weight;
-        this.country = country;
+        super(name,price,weight,country);
         this.animalType = animalType;
         this.frozen = frozen;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
-
-    @Override
-    public double getWeight() {
-        return weight;
-    }
-
-    @Override
-    public String getCountryOfOrigin() {
-        return country;
-    }
 
     @Override
     public void printProductInfo() {
@@ -53,7 +28,7 @@ public class Sausage implements MeatProduct, Info {
 
     @Override
     public double calculatePrice() {
-        return weight * price;
+        return getWeight() * getPrice();
     }
 
     @Override
@@ -74,7 +49,7 @@ public class Sausage implements MeatProduct, Info {
     @Override
     public void buy() {
         System.out.println("Покупка колбасы...");
-        System.out.println("Вес: " + weight);
+        System.out.println("Вес: " + getWeight());
         System.out.println("Итоговая цена: " + calculatePrice());
 
     }
