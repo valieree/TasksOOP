@@ -48,7 +48,7 @@ enum DayOfWeek {
             case POLISH:
                 return polishName;
             default:
-                return englishName; // default to English if the language is not supported
+                return englishName;
         }
     }
 

@@ -8,11 +8,12 @@ public class Main {
             System.out.println("English Name: " + day.getEnglishName());
             System.out.println("French Name: " + day.getFrenchName());
             System.out.println("Polish Name: " + day.getPolishName());
+            System.out.println("Name of Enum: " + day.name());
+
 
 
             System.out.println("Name in French: " + day.getName(DayOfWeek.Language.FRENCH));
 
-            System.out.println("----------");
         }
         System.out.println(DayOfWeek.FRIDAY.getRussianName());
     }
