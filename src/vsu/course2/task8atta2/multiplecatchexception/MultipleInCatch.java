@@ -6,9 +6,10 @@ public class MultipleInCatch {
             exampleOperations();
         } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
             System.out.println("Исключение: " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Исключение: " + e.getMessage());
         }
+//        } catch (Exception e) {
+//            System.out.println("Исключение: " + e.getMessage());
+//        }
     }
     public static void exampleOperations() {
         int result = 555/0;

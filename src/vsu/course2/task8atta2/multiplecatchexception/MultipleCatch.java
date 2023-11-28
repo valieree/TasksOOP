@@ -16,7 +16,9 @@ public class MultipleCatch {
     public static void exampleOperations() {
         int result = 555/0;
         int[] arr = new int[] {1,2,3};
-        System.out.println(arr[4]);
+        System.out.println(arr[5]);
+//        String str = null;
+//        int length = str.length();
 
     }
 }
