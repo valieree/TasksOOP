@@ -24,6 +24,7 @@ public class Main {
         Cheese cheese = new Cheese("Cheese", 100, 200, "Russia", true);
         cheese.buy();
         cheese.printProductInfo();
+
         System.out.println(cheese.isLowFat());
         System.out.println(cheese.getWeight());
 
