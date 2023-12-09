@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Train train = new Train(5); // Создаем поезд с 5 вагонами
+        Train train = new Train(5);
 
         train.addPassenger(2, 1,new Passenger("Анна", "123456"));
         train.addPassenger(3, 2,new Passenger("Елена", "1903298"));

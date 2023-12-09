@@ -1,8 +1,7 @@
 package vsu.course2.task10atta3;
 
-import java.util.ArrayList;
 import java.util.*;
-import java.util.List;
+
 // Купе
 public class Compartment {
     private Set<Passenger> passengers;

@@ -1,7 +1,6 @@
 package vsu.course2.task10atta3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -97,21 +96,6 @@ public void printFullCompartmentsInTrain() {
             }
         }
     }
-//public void printPartiallyFilledCompartmentsInTrain() {
-//    for (int i = 0; i < carriages.size(); i++) {
-//        Carriage carriage = carriages.get(i);
-//        int partiallyFilledCount = carriage.getPartiallyFilledCompartmentsCount();
-//
-//        if (partiallyFilledCount > 0) {
-//            System.out.println("Вагон " + (i + 1) + ": Частично заполненные купе");
-//
-//            for (Compartment compartment : carriage.getCompartments().values()) {
-//                if (compartment.isPartiallyFilled()) {
-//                    System.out.println("  Купе: " + + compartment.getPassengers().size() + " человека");
-//                }
-//            }
-//        }
-//    }
-//}
+
 
 }
