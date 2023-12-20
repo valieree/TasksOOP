@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomDateGenerator {
     public static void main(String[] args) {
-        String startDateString = "1900-01-01";
+        String startDateString = "1970-01-01";
         String endDateString = "2023-01-01";
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
