@@ -1,16 +1,6 @@
 package vsu.course2.task10atta3;
 public class Main {
     public static void main(String[] args) {
-//        Train train = new Train(5);
-//
-//        train.addPassenger(2, 1,new Passenger("Анна", "123456"));
-//        train.addPassenger(3, 2,new Passenger("Елена", "1903298"));
-//
-//        train.addPassenger(5, 3, new Passenger("Дарья", "345678"));
-//        train.addPassenger(5, 3, new Passenger("Алексей", "1413678"));
-//        train.addPassenger(5, 3, new Passenger("Антон", "214124"));
-//        train.addPassenger(5, 3, new Passenger("Мария", "789211"));
-//        train.addPassenger(2, 9, new Passenger("Анастасия", "5789"));
         Train train = new Train(3);
 
         train.

@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Compartment {
 
-    private Set<Passenger> passengers;
     private int compartmentNumber;
 
     private Map<Integer, Passenger> seats;

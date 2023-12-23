@@ -4,11 +4,7 @@ public class Passenger {
     private String name;
     private String passportNumber;
 
-    public boolean isUpperSeat() {
-        return isUpperSeat;
-    }
 
-    private boolean isUpperSeat;
 
     public Passenger(String name, String passportNumber) {
         this.name = name;
