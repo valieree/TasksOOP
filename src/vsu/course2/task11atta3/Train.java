@@ -73,39 +73,6 @@ public class Train {
                 .sum();
     }
 
-    private void printSeats(Set<Passenger> seats) {
-        if (!seats.isEmpty()) {
-            seats.forEach(passenger -> System.out.print(" " + passenger.getName().charAt(0) + " "));
-        } else {
-            System.out.print("    ");
-        }
-    }
-
-    public void printFullCompartmentsInTrain(boolean upperSeats) {
-        carriages.forEach(carriage -> {
-            Map<Integer, Compartment> compartments = carriage.getCompartments();
-            System.out.println("Вагон " + (carriages.indexOf(carriage) + 1) + ":");
-            compartments.forEach((compartmentNumber, compartment) -> {
-                System.out.print("  Купе " + compartmentNumber + ": | ");
-                compartment.getPassengers().forEach(passenger -> {
-                    IntStream.rangeClosed(1, 4)
-                            .forEach(seatNumber -> {
-                                boolean isUpperSeat = seatNumber <= 2;
-                                if (passenger.isUpperSeat() == isUpperSeat) {
-                                    String seatStatus = "З";
-                                    String seatColor = "\u001B[31m";
-                                    System.out.print(seatColor + seatStatus + " " + seatStatus + " | ");
-                                }
-                            });
-                });
-
-                if (compartment.getPassengers().stream().noneMatch(passenger -> passenger.isUpperSeat() == upperSeats)) {
-                    IntStream.rangeClosed(1, 4)
-                            .forEach(seatNumber -> System.out.print("    | "));
-                }
-            });
-        });
-    }
 
     public void printTrainSchema() {
         carriages.forEach(carriage -> {
