@@ -1,16 +1,33 @@
 package vsu.course2.task12atta3;
 
+import vsu.course2.task12atta3.Adapter.NormalPassengerInterface;
+import vsu.course2.task12atta3.Adapter.PassengerWithPetAdapter;
 import vsu.course2.task12atta3.FactoryMethod.NormalPassengerFactory;
 import vsu.course2.task12atta3.FactoryMethod.PassengerFactory;
 import vsu.course2.task12atta3.FactoryMethod.PassengerWithPetFactory;
 
 public class Main {
     public static void main(String[] args) {
+
+
+        // Factory Method
+        System.out.println("factory method:");
         PassengerFactory passengerFactory = createPassengerByType("Да");
         Passenger passenger = passengerFactory.createPassenger("Иванов", "123456");
         passenger.print();
         Train train = new Train(1);
         train.addPassenger(1,1,1,passenger);
+
+
+        // Adapter
+        System.out.println("adapter:");
+        NormalPassengerInterface normalPassenger = new NormalPassenger("Некошкин", "23456");
+        normalPassenger.print();
+        PassengerWithPet passengerWithPet = new PassengerWithPet("Кошкин", "789012");
+        NormalPassenger petPassenger= new PassengerWithPetAdapter(passengerWithPet);
+        printTicket(petPassenger);
+
+        train.addPassenger(1,2,8, petPassenger);
 
         train.printTrainSchema();
 
@@ -31,5 +48,8 @@ public class Main {
         } else {
             throw new RuntimeException("Некорректный ввод");
         }
+    }
+     static void printTicket(NormalPassengerInterface normalPassenger) {
+        normalPassenger.print();
     }
 }

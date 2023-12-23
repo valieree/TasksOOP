@@ -12,6 +12,6 @@ public class PassengerWithPet extends Passenger {
 
     @Override
     public void print() {
-        System.out.println("Пассажир с питомцем получил билет");
+        System.out.println("Пассажир " + this.name + " с питомцем получил билет");
     }
 }
