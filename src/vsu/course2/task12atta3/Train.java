@@ -73,13 +73,7 @@ public class Train {
                 .sum();
     }
 
-    private void printSeats(Set<Passenger> seats) {
-        if (!seats.isEmpty()) {
-            seats.forEach(passenger -> System.out.print(" " + passenger.getName().charAt(0) + " "));
-        } else {
-            System.out.print("    ");
-        }
-    }
+
 
 
 
