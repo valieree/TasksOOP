@@ -4,19 +4,28 @@ import vsu.course2.task12atta3.Adapter.NormalPassengerInterface;
 import vsu.course2.task12atta3.Adapter.PassengerWithPetAdapter;
 import vsu.course2.task12atta3.FactoryMethod.NormalPassengerFactory;
 import vsu.course2.task12atta3.FactoryMethod.PassengerFactory;
+import vsu.course2.task12atta3.FactoryMethod.PassengerType;
 import vsu.course2.task12atta3.FactoryMethod.PassengerWithPetFactory;
+
+
 
 public class Main {
     public static void main(String[] args) {
-
+        Train train = new Train(1);
 
         // Factory Method
         System.out.println("factory method:");
-        PassengerFactory passengerFactory = createPassengerByType("Да");
+
+        PassengerFactory passengerFactory = PassengerCreator.createPassengerByType(PassengerType.WITH_PET);
         Passenger passenger = passengerFactory.createPassenger("Иванов", "123456");
         passenger.print();
-        Train train = new Train(1);
-        train.addPassenger(1,1,1,passenger);
+        train.addPassenger(1,1,2,passenger);
+        PassengerFactory passengerFactory1 = PassengerCreator.createPassengerByType(PassengerType.WITHOUT_PET);
+        Passenger passenger1 = passengerFactory1.createPassenger("Антонов", "123456");
+        passenger1.print();
+
+        train.addPassenger(1,2,6,passenger1);
+
 
 
         // Adapter
@@ -40,13 +49,16 @@ public class Main {
         train.printPartiallyFilledCompartmentsInTrain();
     }
 
-    static PassengerFactory createPassengerByType(String with_pet) {
-        if (with_pet.equalsIgnoreCase("Да")) {
-            return new PassengerWithPetFactory();
-        } else if (with_pet.equalsIgnoreCase("Нет")) {
-            return new NormalPassengerFactory();
-        } else {
-            throw new RuntimeException("Некорректный ввод");
+    public class PassengerCreator {
+        public static PassengerFactory createPassengerByType(PassengerType passengerType) {
+            switch (passengerType) {
+                case WITH_PET:
+                    return new PassengerWithPetFactory();
+                case WITHOUT_PET:
+                    return new NormalPassengerFactory();
+                default:
+                    throw new RuntimeException("Некорректный тип пассажира");
+            }
         }
     }
      static void printTicket(NormalPassengerInterface normalPassenger) {

@@ -14,8 +14,10 @@ public class Carriage {
     }
 
     public void addPassenger(int compartmentNumber, int seatNumber, Passenger passenger) {
-        compartments.getOrDefault(compartmentNumber, new Compartment(0))
-                .addPassenger(seatNumber, passenger);
+        Compartment compartment = compartments.get(compartmentNumber);
+        if (compartment != null && !compartment.isFull()) {
+            compartment.addPassenger(seatNumber, passenger);
+        }
     }
 
     public int getPassengerCountInWagon() {
@@ -26,7 +28,7 @@ public class Carriage {
 
     public long getPartiallyFilledCompartmentsCount() {
         return compartments.values().stream()
-                .filter(Compartment::isPartiallyFilled)
+                .filter(Compartment::isPartiallyFilled)  // .filter(compartment -> compartment.isPartiallyFilled())
                 .count();
     }
 

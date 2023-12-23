@@ -53,12 +53,14 @@ public class Compartment {
     }
 
     public void printCompartmentSchema() {
-        for (int i = 1; i <= 2; i++) {
-            for (int j = 1; j <= 2; j++) {
+        for (int i = 1; i <= 2; i++) { // номер ряда
+            for (int j = 1; j <= 2; j++) { // номер места в ряду
                 int seatNumber;
                 if (i == 1) {
+                   // номер для верхнего ряда
                     seatNumber = 2 * j + (compartmentNumber - 1) * 4;
                 } else {
+                    // номер для нижнего ряда
                     seatNumber = (2 * (j - 1) + 1) + (compartmentNumber - 1) * 4;
                 }
                 boolean isOccupied = seats.get(seatNumber) != null;
